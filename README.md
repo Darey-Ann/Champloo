@@ -1,9 +1,19 @@
 # Champloo
 _A standalone p5.js collage application, created for the University of Tokyo's 20240 iii Exhibition_
 
+This is the very first full application I've built! 🥹
+It started as a sketch on p5.js, and then I created a local p5.js project.
+I have Windows 11. And I used Python 3.12.6 (with Anaconda - conda 24.9.2), and also Nodejs v23.1.0 to create a standalone app for Windows. 
+
+
+To run the application:
+1. open the terminal and cd to the directory where this project is located. For example <code>cd C:\Users\You\CHAMPLOO</code>
+2. create a local server by running <code>python -m http.server</code> in your terminal (depending on your version of Python)
+3. in your browser, type <code>localhost:8000</code> into the address bar
+
 **NOTES**: <br>
 Press S to save your collage <br>
-Press ESCAPE to exit the application
+Press ESCAPE to exit the application (for the standalone app)
 
 <hr>
 
