@@ -1,0 +1,28 @@
+{
+  "name": "CHAMPLOO",
+  "version": "1.0.0",
+  "description": "A standalone p5.js collage application, created for the III Exhibition 2024",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "champloo",
+    "mac": {
+      "target": "dmg",
+      "icon": "icons/champloo.icns" 
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icons/champloo.ico" 
+    }
+  },
+  "devDependencies": {
+    "electron": "^latest-version",
+    "electron-builder": "^latest-version"
+  },
+  "author": "Darey-Ann Louisville",
+  "license": "MIT"
+}
