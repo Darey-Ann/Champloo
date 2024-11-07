@@ -5,7 +5,7 @@ _A standalone p5.js collage application, created for the University of Tokyo's 2
 
 This is the very first full application I've built, and exhibited! 🥹
 It started as a sketch on p5.js, and then I created a local p5.js project.
-I use Windows 11, Python 3.12.6 (with Anaconda - conda 24.9.2), and also Nodejs v23.1.0 to create a standalone app for Windows. 
+I used Windows 11, Python 3.12.6 (with Anaconda - conda 24.9.2), and also Nodejs v23.1.0 (and ChatGPT) to create a standalone app for Windows. 
 
 
 To run the application:
