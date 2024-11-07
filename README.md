@@ -1,2 +1,2 @@
 # Champloo
-III EXhibition Application for Making Collages
+III Exhibition 2024 Application for Making Collages
