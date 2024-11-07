@@ -42,7 +42,7 @@ let lastInteractionTime;
 // UPDATE SCREENSAVER TIME HERE
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-let screensaverDelay = 90000; // 5 minutes (in ms, 10000 = 10 sec)
+let screensaverDelay = 300000; // 5 minutes (in ms, 10000 = 10 sec)
 let screensaverActive = false;
 
 let selectedImgIndex = null; // Track selected image index
