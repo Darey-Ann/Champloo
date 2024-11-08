@@ -72,7 +72,7 @@ function preload() {
   // ADD AMOUNT OF ELEMENTS HERE
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  const totalImages = 41; // now we have 49
+  const totalImages = 41; // Adjust based on the number of images
   for (let i = 0; i < totalImages; i++) {
     let filename = nf(i, 3) + '.png'; // Assuming filenames are 000.png, 001.png, etc.
     images.push(loadImage(`elements/${filename}`)); // Load the image
@@ -493,7 +493,7 @@ function drawInstructions() {
   textSize(18);
   textFont('Arial'); // Font for the body text
   text("画像をドラッグして移動できます。\nDrag and drop images to move them around.\n\n " +
-       "👆 画像をダブルクリックして最前面に持ってくる。\nDouble-click on an image to bring it to the front.\n\n" +
+       "👆 画像をダブルクリックして最前面か最背面に持ってくる。\nDouble-click on an image to bring it to the front or back.\n\n" +
        "🔴  画像の右上隅をドラッグして回転。\nDrag the top-right corner of an image to rotate it.\n\n" +
        "🔵 画像の右下隅をドラッグしてサイズ変更。\nDrag the bottom-right corner of an image to resize it.\n\n" +
        "🔁 リセットボタンを押して、画像を再配置しこのガイドを再表示。\nClick the reset button to reset images and show this guide again.",
@@ -685,6 +685,10 @@ function doubleClicked() {
     showInstructions = false; // Hide instructions when double-clicked separately
   }
   
+
+  // Store the original length of the arrays before splicing
+  let originalLength = images.length;
+  
   for (let i = images.length - 1; i >= 0; i--) {
     let cx = positions[i].x + imgWidths[i] / 2;
     let cy = positions[i].y + imgHeights[i] / 2;
@@ -703,14 +707,39 @@ function doubleClicked() {
       let selectedWidth = imgWidths.splice(i, 1)[0];
       let selectedHeight = imgHeights.splice(i, 1)[0];
 
-      // Add them back to the end of the arrays
-      positions.push(selectedPosition);
-      images.push(selectedImage);
-      imgWidths.push(selectedWidth);
-      imgHeights.push(selectedHeight);
+      // Add them back to the end of the arrays (this bringgs them to the front)
+      //positions.push(selectedPosition);
+      //images.push(selectedImage);
+      //imgWidths.push(selectedWidth);
+      //imgHeights.push(selectedHeight);
+
+      let clickedImageIndex = i; // Store the index of the clicked image (this is so the selection rectangle doesnt move around after doubleclick)
+      
+
+      //if (i === images.length) {
+        if (i === originalLength-1) {
+        // If the clicked image is already at the top (last in the array)
+        // Send it to the back (beginning of the array)
+        positions.unshift(selectedPosition);
+        images.unshift(selectedImage);
+        imgWidths.unshift(selectedWidth);
+        imgHeights.unshift(selectedHeight);
+        selectedImgIndex =  0;
+      } else {
+        // Otherwise, move it to the end of the array
+        positions.push(selectedPosition);
+        images.push(selectedImage);
+        imgWidths.push(selectedWidth);
+        imgHeights.push(selectedHeight);
+        selectedImgIndex = images.length - 1;
+      }
+
+      // Update selectedImgIndex to the position of the clicked image (before it was moved)
+      //selectedImgIndex = clickedImageIndex; // Set it back to the index of the image that was clicked
+
       
       // Update selectedImgIndex to the new position at the end of the arrays
-      selectedImgIndex = images.length - 1;
+      //selectedImgIndex = images.length - 1;
       break;
     }
   }
@@ -817,25 +846,23 @@ function arrangeImages() {
 //  }, 5); // milliseconds
 //}
 
-
 let dateAndTime = new Date().toLocaleString("ja-JP", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false
-  }).replace(/\//g, "-").replace(":", "_");
-  
-function saveCollage() {
-  saving = true;  // Set flag to hide selection
-  redraw();  // Trigger draw without selection for saving
-  saveCanvas('collage'+savecount+'_'+dateAndTime,'png'); // Save the canvas
-  saving = false;  // Reset flag after saving
-  //redraw();  // Draw again to re-show selection if needed
-  savecount ++;
-}
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false
+}).replace(/\//g, "-").replace(":", "_");
 
+function saveCollage() {
+saving = true;  // Set flag to hide selection
+redraw();  // Trigger draw without selection for sving
+saveCanvas('collage'+savecount+'_'+dateAndTime,'png'); // Save the canvas
+saving = false;  // Reset flag after saving
+//redraw();  // Draw again to re-show selection if needed
+savecount ++;
+}
 function toggleFullscreen() {
   let fs = fullscreen();
   fullscreen(!fs);
