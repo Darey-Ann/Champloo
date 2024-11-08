@@ -817,10 +817,20 @@ function arrangeImages() {
 //  }, 5); // milliseconds
 //}
 
+
+let dateAndTime = new Date().toLocaleString("ja-JP", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).replace(/\//g, "-").replace(":", "_");
+  
 function saveCollage() {
   saving = true;  // Set flag to hide selection
   redraw();  // Trigger draw without selection for saving
-  saveCanvas('collage'+savecount,'png'); // Save the canvas
+  saveCanvas('collage'+savecount+'_'+dateAndTime,'png'); // Save the canvas
   saving = false;  // Reset flag after saving
   //redraw();  // Draw again to re-show selection if needed
   savecount ++;
