@@ -858,7 +858,7 @@ let dateAndTime = new Date().toLocaleString("ja-JP", {
 function saveCollage() {
 saving = true;  // Set flag to hide selection
 redraw();  // Trigger draw without selection for sving
-saveCanvas('collage'+savecount+'_'+dateAndTime,'png'); // Save the canvas
+saveCanvas('collage'+nf(savecount,3)+'_'+dateAndTime,'png'); // Save the canvas
 saving = false;  // Reset flag after saving
 //redraw();  // Draw again to re-show selection if needed
 savecount ++;
