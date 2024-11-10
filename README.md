@@ -14,7 +14,7 @@ To run the application:
 3. In the address bar of your browser, type <code>localhost:8000</code> 
 
 **NOTES**: <br>
-Double-click to exit the screensaver
+Double-click to exit the screensaver (✨ button) <br>
 Press S to save your collage <br>
 Press ESCAPE to exit the application (for the standalone app)
 
@@ -25,7 +25,7 @@ This artwork is a platform that allows users to create collages based on a speci
 This unique creation will ultimately inspire you to reflect on that theme. Though each element may seem disparate at first glance, you will find that they share subtle connections.
 
 **Contributors:**
-* Miyu Tomori (project leader)
+* Miyu Tomori (project leader - concept creator)
 * Darey-Ann Louisville (software development)
 * Mariko Mazusawa
 * Yuna Tokiwa
