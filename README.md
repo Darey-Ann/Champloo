@@ -2,6 +2,7 @@ _A standalone p5.js collage application, created for the University of Tokyo's 2
 ![Champloo](/elements/039.png?raw=true "Champloo")
 
 
+<br>
 
 This is the very first full application I've built, and exhibited! 🥹
 It started as a sketch on p5.js, and then I created a local p5.js project.
@@ -18,7 +19,10 @@ Double-click to exit the screensaver (✨ button) <br>
 Press S to save your collage <br>
 Press ESCAPE to exit the application (for the standalone app)
 
-<hr>
+<br>
+View it on p5js HERE: https://editor.p5js.org/darey-ann/full/-zAQ39d3Z 
+<br>
+<br>
 
 ## About Champloo &#126;kakimazeru&#126;
 This artwork is a platform that allows users to create collages based on a specific theme. Viewers can use the diverse and distincitve elements created by others to craft a unique, one-time-only collage.
