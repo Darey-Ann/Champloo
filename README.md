@@ -1,6 +1,6 @@
 _A standalone p5.js collage application, created for the University of Tokyo's 2024 iii Exhibition_ <br>
 View it on p5js HERE: https://editor.p5js.org/darey-ann/full/-zAQ39d3Z 
-![Champloo](/elements/039.png?raw=true "Champloo")
+![Champloo](/champloo.gif?raw=true "Champloo")
 
 
 <br>
